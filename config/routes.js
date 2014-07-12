@@ -69,6 +69,10 @@ module.exports.routes = {
 		controller: 'EventController',
 		action: 'viewEvent'
 	},
+	'/joinEvent/:id': {
+		controller: 'EventController',
+		action: 'joinEvent'
+	},
 '/test/friend': {
 	controller: 'NodeController',
 	action: 'addFriends',
