@@ -238,12 +238,19 @@ createEvent : function(req, res) {
 	var eName = req.param('event_name');
 	var ePlace = req.param('event_place');
 	var eCreatorId = req.user.facebookId;
+	var eDetails = req.param('event_details');
+	var eStart = req.param('event_start_date');
+	var eEnd = req.param('event_end_date');
 	var eId = eCreatorId + eName + "--";
 	 
 	// get creatorId, eventId, eventName, array<userIds>
 	 var eventNode = db.createNode({ creatorId: eCreatorId,
 			eventId: eId,
 			eventName: eName,
+			eventLocation : ePlace,
+			eventDetails : eDetails,
+			eventStart: eStart,
+			eventEnd : eEnd
 	  });
 	eventNode.save(function(err, node) {
 		if (err) { console.log("Error saving new event node"); } else { console.log("Created event node"); }
@@ -268,8 +275,8 @@ getEvent : function(req, res) {
 			jsonArray.push(d);
 		}
 	//	console.log(results[0].e.db);
+	res.send(jsonArray);
 	});
-res.send(jsonArray);
 		
 },
 }
