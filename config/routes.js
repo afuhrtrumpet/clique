@@ -33,6 +33,14 @@ module.exports.routes = {
 		controller: 'home',
 		action: 'index'
   },
+	'post /test/createSimilarity' : {
+		controller : 'NodeController',
+		action : 'createSimilarity'
+	},
+	'get /test/recommends' : {
+		controller: 'NodeController',
+		action : 'generateSuggestions'
+	},
 
 	'/dashboard': {
 		controller: 'home',
@@ -68,6 +76,10 @@ module.exports.routes = {
 	'/viewEvent/:id': {
 		controller: 'EventController',
 		action: 'viewEvent'
+	},
+	'/joinEvent/:id': {
+		controller: 'EventController',
+		action: 'joinEvent'
 	},
 '/test/friend': {
 	controller: 'NodeController',

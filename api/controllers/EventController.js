@@ -1,3 +1,5 @@
+var passport = require('passport'),
+		FacebookStrategy = require('passport-facebook').Strategy;
 /**
  * EventController
  *
@@ -35,6 +37,40 @@ module.exports = {
 		var id = req.param("id");
 		console.log(id);
 		res.view({"id": id});
+	},
+
+	joinEvent: function(req, res) {
+
+		var eventId = req.param("id");
+		if (!req.session.user) {
+		res.redirect('/user/facebook', {"id": req.param("id")});
+			/*passport.authenticate('facebook', { scope: ['public_profile',  'read_friendlists', 'email', 'user_about_me', 'user_likes', 'user_friends']},
+					function(err, user) {
+						req.logIn(user, function(err) {
+							if (err) {
+								console.log(err);
+								req.session.flash = 'There was an error';
+								res.redirect('user/login');
+							} else {
+								req.session.user = user;
+								res.redirect('/dashboard');
+							}
+						});
+					})(req, res, next);*/
+		} else {
+		Event.findOne({id: eventId}, function(err, event) {
+			if (err)
+				console.log(err);
+			else if (req.session.user) {
+				event.userIds.push(req.session.user.id);
+				event.update({
+					userIds: event.userIds
+				}, function(err, events) {
+					res.redirect('/viewEvent/' + eventId);
+				});
+			}
+		});
+		}
 	},
 
 
