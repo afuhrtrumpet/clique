@@ -29,7 +29,7 @@ module.exports = {
 	logout: function(req, res) {
 		req.session.user = null;
 		req.session.flash = 'You have logged out';
-		res.redirect('user/login');
+		res.redirect('/');
 	},
 
 	'facebook': function(req, res, next) {
@@ -41,7 +41,7 @@ module.exports = {
 							res.redirect('user/login');
 						} else {
 							req.session.user = user;
-							res.redirect('/user/dashboard');
+							res.redirect('/dashboard');
 						}
 					});
 				})(req, res, next);
@@ -50,7 +50,7 @@ module.exports = {
 	'facebook/callback': function(req, res, next) {
 		passport.authenticate('facebook',
 				function(req, res) {
-					res.redirect('/user/dashboard');
+					res.redirect('/dashboard');
 				})(req, res, next);
 	}
 };
