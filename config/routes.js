@@ -34,8 +34,11 @@ module.exports.routes = {
   // (This would also work if you had a file at: `/views/home.ejs`)
   '/': {
     view: 'home/index'
-  }
-
+  },
+  '/test' : {
+		controller : 'NodeController',
+		action : 'createUser'
+	}
   /*
   // But what if you want your home page to display
   // a signup form located at `views/user/signup.ejs`?
@@ -56,6 +59,7 @@ module.exports.routes = {
     controller: 'MessageController',
     action: 'inbox'
   }
+  
 
 
   // If you decided to call your action `index` instead of `inbox`,
