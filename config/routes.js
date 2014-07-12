@@ -55,6 +55,9 @@ module.exports.routes = {
 	'/partials/dashboard': {
 		view: 'partials/dashboard'
 	},
+  '/dashboard_new': {
+    view: 'home/dashboard_new'
+  },
 '/test/place': {
 	controller: 'NodeController',
 	action: 'addPlaces',
