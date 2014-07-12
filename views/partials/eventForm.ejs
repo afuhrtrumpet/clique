@@ -1,3 +1,3 @@
-<input type="text" id="location_picker" ng-model="location">
+<input type="text" id="location_picker" ng-change="update()" ng-model="location" googleplace/>
 <div id="map"></div>
 <button class="btn btn-default" ng-click="submit()">Add Event</button>
