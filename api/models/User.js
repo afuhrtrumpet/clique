@@ -22,6 +22,12 @@ module.exports = {
 			type: 'string',
 			required: true,
 			unique: false
+		},
+
+		accessToken: {
+			type: 'string',
+			required: false,
+			unique: false
 		}
 
   },
