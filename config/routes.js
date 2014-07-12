@@ -33,6 +33,14 @@ module.exports.routes = {
 		controller: 'home',
 		action: 'index'
   },
+	'post /test/createSimilarity' : {
+		controller : 'NodeController',
+		action : 'createSimilarity'
+	},
+	'get /test/recommends' : {
+		controller: 'NodeController',
+		action : 'generateSuggestions'
+	},
 
 	'/dashboard': {
 		controller: 'home',
