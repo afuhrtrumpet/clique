@@ -35,10 +35,10 @@ passport.deserializeUser(function (id, done) {
 });
 
 passport.use(new FacebookStrategy({
-    clientID: "clientId",
-    clientSecret: "clientSecret",
-    callbackURL: "http://localhost:8080/user/facebook/callback",
-    enableProof: false
+    clientID: "574894572634219",
+    clientSecret: "5ed6ad8e9c13a2495f25079c7e3f369a",
+	  callbackURL: "/user/facebook/callback",
+	  enableProof: false
   }, function (accessToken, refreshToken, profile, done) {
 
 		//To make a Facebook API call:
