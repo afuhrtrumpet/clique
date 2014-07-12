@@ -111,6 +111,27 @@ addSuggestions : function(req, res) {
 
 },
 
+joinEvent : function(req, res) {
+},
+
+createEvent : function(req, res) {
+	console.log(req.params);
+	// get creatorId, eventId, eventName, array<userIds>
+	var eventNode = db.createNode({ creatorId: e.creatorId,
+			eventId: e.eventId,
+			eventName: e.eventName,
+	  });
+	node.save(function(err, node) {
+		if (err) { console.log("Error saving new event node"); } else { console.log("Created event node"); }
+	});
+	// Invite people to event 
+	for ( var i = 0; i < e.userIds.length; ++i ) {
+		var userId = e.userIds[i];
+		var query = 'MATCH (n {facebookId: {userID} }) CREATE (
+	}
+
+},
+	
 		
 }
 
