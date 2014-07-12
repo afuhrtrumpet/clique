@@ -197,56 +197,73 @@
 </div>
 
 <script type="text/ng-template" id="createEvent.html">
-    <div class="modal-header">
-        <h3 class="modal-title">Create Event</h3>
-    </div>
-    <div class="modal-body">
-    	<form class="form-horizontal">
-	      <div class="form-group">
-					<label class="col-lg-2 control-label"> Name </label>
-					<div class="col-lg-10">
-						<input class="form-control" type="text" ng-model="event_name" placeholder="Event Name">
+    <div class="modal-all">
+	    <div class="modal-header">
+	        <h3 class="modal-title">Create Event</h3>
+	    </div>
+	    <div class="modal-body">
+	    	<form class="form-horizontal">
+		      <div class="form-group">
+						<div class="col-lg-12">
+							<input class="form-control" type="text" ng-model="event_name" placeholder="Event Name">
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-lg-2 control-label"> Details </label>
-					<div class="col-lg-10">
-						<textarea class="form-control" ng-model="event_details" placeholder="Event Details"></textarea>
+					<div class="form-group">
+						<div class="col-lg-12">
+							<textarea class="form-control" ng-model="event_details" placeholder="Event Details"></textarea>
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-lg-2 control-label"> Place </label>
-					<div class="col-lg-10">
-						<input class="form-control" id="location_picker" type="text" ng-model="event_place" placeholder="Event Location">
+					<div class="form-group">
+						<div class="col-lg-12">
+							<input class="form-control" id="location_picker" type="text" ng-model="event_place" placeholder="Event Location">
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-lg-2 control-label"> Place </label>
-					<div class="col-lg-5">
-						<p class="input-group">
-							<input class="form-control" type="text" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'", datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true", close-text="Close" placeholder="Start Date" />
+					<div class="form-group">
+						<div class="col-lg-5">
+							<p class="input-group">
+								<input class="form-control" type="text" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'", datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true", close-text="Close" placeholder="Start Date" />
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-side" ng-click="open($event)">
+										<i class="glyphicon glyphicon-calendar"></i>
+									</button>
+								</span>
+							</p>
+						</div>
+						<div class="col-lg-5 col-lg-push-2">
+							<p class="input-group pull-right">
+							<input class="form-control" type="text" datepicker-popup="{{format2}}" ng-model="dt2" is-open="opened2" min-date="minDate2" max-date="'2015-06-22'", datepicker-options="dateOptions2" date-disabled="disabled2(date2, mode2)" ng-required="true", close-text="Close" placeholder="End Date" />
 							<span class="input-group-btn">
-								<button type="button" class="btn btn-default" ng-click="open($event)">
+								<button type="button" class="btn btn-side" ng-click="open2($event)">
 									<i class="glyphicon glyphicon-calendar"></i>
 								</button>
 							</span>
 						</p>
+						</div>
 					</div>
-					<div class="col-lg-5">
-						<p class="input-group">
-						<input class="form-control" type="text" datepicker-popup="{{format2}}" ng-model="dt2" is-open="opened2" min-date="minDate2" max-date="'2015-06-22'", datepicker-options="dateOptions2" date-disabled="disabled2(date2, mode2)" ng-required="true", close-text="Close" placeholder="End Date" />
-						<span class="input-group-btn">
-							<button type="button" class="btn btn-default" ng-click="open2($event)">
-								<i class="glyphicon glyphicon-calendar"></i>
-							</button>
-						</span>
-					</p>
-					</div>
-				</div>
-			</form>
-		</div>
-	  <div class="modal-footer">
-        <button class="btn btn-primary" ng-click="submitEvent(event_name, event_details, event_place, event_start_date, event_end_date)">OK</button>
-        <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+				</form>
+			</div>
+		  <div class="modal-footer">
+	        <button class="btn btn-next" ng-click="submitEvent(event_name, event_details, event_place, event_start_date, event_end_date)">Next</button>
+	    </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="nextEventPage.html">
+    <div class="modal-all">
+
+	    <div class="modal-body">
+	    	<h4 class="modal-title">Choose your clique</h3>
+	    	<p class="modal-body-p"> Your clique is the group of people who you’ll be spending your time at this event with. Decide how you want to choose them and then give them a specific time limit to show their availability. </p>
+	    	<h4 class="modal-title">Invite Friends</h3>
+        <p><button class="btn btn-facebook" ng-click="">via Facebook</button>
+        <button class="btn btn-send-link" ng-click="">Send a link</button></p>
+	    	<h4 class="modal-title">Now give them a time limit</h3>
+				<p><input class="form-control" type="text" placeholder="Time"></p>
+
+
+			</div>
+		  <div class="modal-footer">
+	        <button class="btn btn-done" ng-click="">Done</button>
+	    </div>
     </div>
 </script>

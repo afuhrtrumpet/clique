@@ -4,7 +4,6 @@
 
 cliqueApp
 	.controller('dashboardController', function($scope, $modal, $http) {
-		
 
 		// notes editing
 	  $scope.createEvent = function () {
@@ -22,9 +21,9 @@ cliqueApp
 	    	location.reload(); 
 			});
 		}
-	});
+});
 
-	var eventCreateFunction = function($scope, $modalInstance, $http) {
+var eventCreateFunction = function($scope, $modal, $modalInstance, $http) {
 
 	$('#location_picker').geocomplete();
 
@@ -37,15 +36,34 @@ cliqueApp
 			event_end_date: event_end_date
 		}
 
-		$http.post('/test/event', msg_body).success(function(res) {
-			console.log(msg_body);
-			$modalInstance.close();
-		});
+		//$http.post('/test/event', msg_body).success(function(res) {
+			//console.log(msg_body);
+			//$modalInstance.close();
+			$scope.cancel();
+			$scope.nextEventPage();
+		//});
 	
 	};
 
   $scope.cancel = function () {
     $modalInstance.dismiss('cancel');
+  };
+
+  // notes editing
+  $scope.nextEventPage = function () {
+    var modalInstance = $modal.open({
+      templateUrl: 'nextEventPage.html',
+      controller: eventCreateNextFunction,
+      resolve: {
+        orders: function () {
+          return $scope.order;
+        }
+      }
+    });
+
+    modalInstance.result.then(function() {
+    	location.reload(); 
+		});
   };
 
 	// calendar
@@ -61,7 +79,7 @@ cliqueApp
     return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
   };
 
-   $scope.dateOptions = {
+  $scope.dateOptions = {
     formatYear: 'yy',
     startingDay: 1
   };
@@ -90,3 +108,7 @@ cliqueApp
   $scope.formats2 = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
   $scope.format2 = $scope.formats2[0];
 }
+
+var eventCreateNextFunction = function($scope) {
+
+};
