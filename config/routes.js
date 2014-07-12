@@ -37,6 +37,9 @@ module.exports.routes = {
   },
   '/partials/home': {
     view: 'partials/home'
+  },
+  '/partials/weee': {
+    view: 'partials/weee'
   }
 
   /*
