@@ -37,6 +37,7 @@ module.exports = {
 				console.log('Saved node to db');
 			}
 		});
+	next();
 	}
 		
 };
