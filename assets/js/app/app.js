@@ -16,6 +16,10 @@ var cliqueApp = angular.module('cliqueApp', ['ngRoute', 'ngResource', 'ui.bootst
 			templateUrl: 'partials/dashboard',
 			controller: 'homeController'
 		})
+		.when('/createEvent', {
+			templateUrl: 'partials/eventForm',
+			controller: 'createEventController'
+		})
 		.otherwise({
 			redirectTo: '/home'
 		});
