@@ -1,0 +1,231 @@
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Akshay Dixit"
+AND b.yelpName = "Sports Page"
+CREATE UNIQUE (a)-[r:RATING {rating: 2}]-(b)
+RETURN r;
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Prashish Rajbhandari"
+AND b.yelpName = "Beefy's Cabin"
+CREATE UNIQUE (a)-[r:RATING {rating: 4}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Feiran Chen"
+AND b.yelpName = "Blue Max"
+CREATE UNIQUE (a)-[r:RATING {rating: 1}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Andre Tacuyan"
+AND b.yelpName = "First & Main Sports Lounge"
+CREATE UNIQUE (a)-[r:RATING {rating: 2}]-(b)
+RETURN r;
+
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Alex Fuhr"
+AND b.yelpName = "Alibi"
+CREATE UNIQUE (a)-[r:RATING {rating: 2}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Alex Fuhr"
+AND b.yelpName = "Fred's Place"
+CREATE UNIQUE (a)-[r:RATING {rating: 5}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Sai Sri Sathya"
+AND b.yelpName = "Vive Sol"
+CREATE UNIQUE (a)-[r:RATING {rating: 4}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Vivek Phuloria"
+AND b.yelpName = "Dishdash"
+CREATE UNIQUE (a)-[r:RATING {rating: 4}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Prashish Rajbhandari"
+AND b.yelpName = "Himalayan Kitchen"
+CREATE UNIQUE (a)-[r:RATING {rating: 2}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Sai Sri Sathya"
+AND b.yelpName = "The Sea by Alexander's Steakhouse"
+CREATE UNIQUE (a)-[r:RATING {rating: 1}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Feiran Chen"
+AND b.yelpName = "Cascal"
+CREATE UNIQUE (a)-[r:RATING {rating: 5}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Alex Fuhr"
+AND b.yelpName = "Lilly Mac's Irish Bar and Restaurant"
+CREATE UNIQUE (a)-[r:RATING {rating: 4}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Feiran Chen"
+AND b.yelpName = "Shana Thai Restaurant"
+CREATE UNIQUE (a)-[r:RATING {rating: 3}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Andre Tacuyan"
+AND b.yelpName = "Mervyn's Lounge"
+CREATE UNIQUE (a)-[r:RATING {rating: 4}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Albert Koy"
+AND b.yelpName = "Alibi"
+CREATE UNIQUE (a)-[r:RATING {rating: 2}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Andre Tacuyan"
+AND b.yelpName = "Sports Page"
+CREATE UNIQUE (a)-[r:RATING {rating: 1}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Prashish Rajbhandari"
+AND b.yelpName = "Cascade"
+CREATE UNIQUE (a)-[r:RATING {rating: 3}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Akshay Dixit"
+AND b.yelpName = "Beefy's Cabin"
+CREATE UNIQUE (a)-[r:RATING {rating: 2}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Feiran Chen"
+AND b.yelpName = "Blue Max"
+CREATE UNIQUE (a)-[r:RATING {rating: 5}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Feiran Chen"
+AND b.yelpName = "Fred's Place"
+CREATE UNIQUE (a)-[r:RATING {rating: 5}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Sai Sri Sathya"
+AND b.yelpName = "Shana Thai Restaurant"
+CREATE UNIQUE (a)-[r:RATING {rating: 1}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Vivek Phuloria"
+AND b.yelpName = "Mervyn's Lounge"
+CREATE UNIQUE (a)-[r:RATING {rating: 3}]-(b)
+RETURN r;
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Alex Fuhr"
+AND b.yelpName = "Sports Page"
+CREATE UNIQUE (a)-[r:RATING {rating: 4}]-(b)
+RETURN r;
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Alex Fuhr"
+AND b.yelpName = "Beefy's Cabin"
+CREATE UNIQUE (a)-[r:RATING {rating: 2}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Albert Koy"
+AND b.yelpName = "Blue Max"
+CREATE UNIQUE (a)-[r:RATING {rating: 3}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Albert Koy"
+AND b.yelpName = "First & Main Sports Lounge"
+CREATE UNIQUE (a)-[r:RATING {rating: 5}]-(b)
+RETURN r;
+
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Albert Koy"
+AND b.yelpName = "Alibi"
+CREATE UNIQUE (a)-[r:RATING {rating: 4}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Prashish Rajbhandari"
+AND b.yelpName = "Fred's Place"
+CREATE UNIQUE (a)-[r:RATING {rating: 3}]-(b)
+RETURN r;
+
+
+MATCH (a:Person),(b)
+WHERE HAS(b.yelpId) AND
+a.name = "Akshay Dixit"
+AND b.yelpName = "Vive Sol"
+CREATE UNIQUE (a)-[r:RATING {rating: 1}]-(b)
+RETURN r;
+

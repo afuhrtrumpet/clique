@@ -189,8 +189,9 @@ res.send(200);
 
 generateSuggestions : function(req, res) {
 	var query = "MATCH (b {tmpnode:true} )-[r:RATED]->(m), (b)-[s:SIMILARITY]-(a {tmpnode:true, facebookId: {facebookID} }) WHERE NOT((a)-[:RATED}->(m)) WITH m,s.similarity AS similariy, r.rating AS rating ORDER BY m.yelpName, similarity DESC return m, similarity";
+	var q = "MATCH (b:Person)-[r:RATING]->(m), (b)-[s:SIMILARITY]-(a:Person {facebookId: {FBID} }) WHERE NOT((a)-[:RATING]->(m)) WITH m, s.similarity AS similarity, r.rating AS rating ORDER BY m.name, similarity DESC WITH m.yelpName AS place, COLLECT(rating)[0..3] AS ratings WITH place, REDUCE(s=0, i IN ratings | s + i)*1.0 / LENGTH(ratings) AS reco ORDER BY reco DESC RETURN place as Place, reco as Recommendation";
 	var params = {
-		facebookID : req.user.facebookId
+		FBID : req.user.facebookId
 	};
 	var data = [];
 	db.query(query, params, function(err, results) { if(err) console.log(err);

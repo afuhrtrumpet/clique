@@ -32,6 +32,7 @@ CREATE (e:EVENT {creatorId: "1645861312",
 								 eventStart: "1PM",
 								 eventEnd: "2PM"
 								});
+
 			
 MATCH (a:Person),(b:Person) 
 WHERE a.name = "Akshay Dixit" AND b.name = "Prashish Rajbhandari"
