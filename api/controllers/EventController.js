@@ -63,8 +63,10 @@ module.exports = {
 			if (err)
 				console.log(err);
 			else if (req.session.user) {
+				console.log(JSON.stringify(event));
 				event.userIds.push(req.session.user.id);
-				event.update({
+				Event.update({
+					id: eventId,
 					userIds: event.userIds
 				}, function(err, events) {
 					res.redirect('/viewEvent/' + eventId);

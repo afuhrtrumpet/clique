@@ -41,7 +41,7 @@ module.exports = {
 						if (err) {
 							console.log(err);
 							req.session.flash = 'There was an error';
-							res.redirect('user/login');
+							res.redirect('/');
 						} else {
 							req.session.user = user;
 							if (eventId) {
@@ -50,7 +50,8 @@ module.exports = {
 										console.log(err);
 									else if (req.session.user) {
 										event.userIds.push(req.session.user.id);
-										event.update({
+										Event.update({
+											id: eventId,
 											userIds: event.userIds
 										}, function(err, events) {
 											res.redirect('/viewEvent/' + eventId);
