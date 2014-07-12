@@ -1,0 +1,66 @@
+.top-wrapper {
+	position: absolute;
+	background: url('../images/LandingBackground.png') no-repeat;
+	background-size: 100% 120%;
+  max-width: 1400px; /* corresponds to max height of 450px */
+  height: 100%;
+}
+
+.logo-wrapper {
+	margin-top: 5px;
+}
+
+.content-wrapper {
+	margin-top: 120px;
+	margin-left: 40px;
+}
+
+.landing-text {
+	font-family: "Roboto";
+	font-size: 2em;
+	color: #fff;
+	margin-left: 30px;
+}
+
+.landing-button {
+	height: 60px;
+	width: 250px;
+}
+
+.logo-img {
+	height: 28px;
+	width: 76px;
+	opacity: 0.5;
+}
+
+.btn-right {
+	margin-left: 0;
+}
+
+.btn-left {
+	margin-left: 12px;
+}
+.social-icon {
+	height: 50px;
+	width: 200px;
+}
+
+.bottom-wrapper {
+	margin-top:415px;
+}
+
+.bottom-list{
+	font-family: "Roboto";
+	font-size: 12px;
+	margin-top: 15px;
+	color: #a2a7ab;
+}
+
+.buttons-group {
+	margin-top: 10px;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
