@@ -5,6 +5,12 @@
 cliqueApp
 	.controller('dashboardController', function($scope, $modal, $http) {
 
+    $http.get('/test/event').success(
+      function(data) {
+        $scope.events = data; 
+      }
+    );
+
 		// notes editing
 	  $scope.createEvent = function () {
 	    var modalInstance = $modal.open({

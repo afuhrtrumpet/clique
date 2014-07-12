@@ -30,6 +30,32 @@
 			<div class="col-lg-6 col-lg-push-2">
 				<div class="content-wrapper">
 					<ul class="block-content">
+
+						<li ng-repeat="event in events" class="block-list">
+							<div class="row">
+								<div class="col-lg-2">
+									<img class="block-pic" src="images/Avatar1.png" />
+								</div>
+								<div class="col-lg-10">
+									<div class="row">
+										<div class="col-lg-12 block-content-top">
+											<span class="block-notification"><span class="block-person-name"><%- user.name %></span> created a public event called <span class="block-event-name"> {{event.eventName}}</span></span>
+											</div>
+									</div>
+									<div class="row">
+										<div class="col-lg-12 block-content-bottom">
+											<ul class="list-inline" >
+											  <li>Like</li>
+											  <li>Comment</li>
+											  <li>Request an invite</li>
+											  <li class="block-time">20 minutes ago</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+
 						<li class="block-list"> 
 							<div class="row">
 								<div class="col-lg-2">
@@ -54,6 +80,8 @@
 								</div>
 							</div>
 						</li>
+
+
 						<li class="block-list"> 
 							<div class="row">
 								<div class="col-lg-2">
@@ -78,6 +106,7 @@
 								</div>
 							</div>
 						</li>
+
 						<li class="block-list"> 
 							<div class="row">
 								<div class="col-lg-2">
@@ -102,6 +131,7 @@
 								</div>
 							</div>
 						</li>
+
 
 					</ul>
 				</div>
@@ -244,7 +274,7 @@
 				</form>
 			</div>
 		  <div class="modal-footer">
-	        <button class="btn btn-next" ng-click="submitEvent(event_name, event_details, event_place, event_start_date, event_end_date)">Next</button>
+	        <button class="btn btn-next" ng-click="submitEvent(event_name, event_details, event_place, dt, dt2)">Next</button>
 	    </div>
     </div>
 </script>
