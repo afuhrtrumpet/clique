@@ -5,6 +5,13 @@
 cliqueApp
 	.controller('dashboardController', function($scope, $modal, $http) {
 
+    $http.get('/test/event').success(
+      function(data) {
+        $scope.events = data;
+        console.log(data)
+      }
+    );
+
 		// notes editing
 	  $scope.createEvent = function () {
 	    var modalInstance = $modal.open({
@@ -41,12 +48,18 @@ var eventCreateFunction = function($scope, $modal, $modalInstance, $http) {
 			event_end_date: event_end_date
 		}
 
-		//$http.post('/test/event', msg_body).success(function(res) {
-			//console.log(msg_body);
+    var msg_body_2 = {
+      location: event_place
+    }
+
+		$http.post('/test/event', msg_body).success(function(res) {
+			console.log(msg_body);
 			//$modalInstance.close();
-			$scope.cancel();
-			$scope.nextEventPage();
-		//});
+      $http.post('/test/event', msg_body_2).success(function(res) {
+        $scope.cancel();
+        $scope.nextEventPage();
+      });
+		});
 	
 	};
 
@@ -114,6 +127,9 @@ var eventCreateFunction = function($scope, $modal, $modalInstance, $http) {
   $scope.format2 = $scope.formats2[0];
 }
 
-var eventCreateNextFunction = function($scope) {
-
+var eventCreateNextFunction = function($scope, $modalInstance) {
+  $scope.eventDone = function() {
+    console.log('done');
+    $modalInstance.close();
+  }
 };
