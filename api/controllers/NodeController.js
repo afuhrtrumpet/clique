@@ -116,20 +116,27 @@ joinEvent : function(req, res) {
 
 createEvent : function(req, res) {
 	console.log(req.params);
+	var eName = req.param('event_name');
+	var ePlace = req.param('event_place');
+	var eCreatorId = req.user.facebookId;
+	var eId = eCreatorId + eName + "--";
+	 
 	// get creatorId, eventId, eventName, array<userIds>
-	var eventNode = db.createNode({ creatorId: e.creatorId,
-			eventId: e.eventId,
-			eventName: e.eventName,
+	 var eventNode = db.createNode({ creatorId: eCreatorId,
+			eventId: eId,
+			eventName: eName,
 	  });
 	node.save(function(err, node) {
 		if (err) { console.log("Error saving new event node"); } else { console.log("Created event node"); }
 	});
 	// Invite people to event 
-	for ( var i = 0; i < e.userIds.length; ++i ) {
+	/*
+		for ( var i = 0; i < e.userIds.length; ++i ) {
 		var userId = e.userIds[i];
 		var query = 'MATCH (n {facebookId: {userID} }) CREATE (
 	}
-
+*/
+res.send(200);
 },
 	
 		
