@@ -3,6 +3,7 @@
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:Thin">
 <link type="text/css" href='lib/bootstrap/css/bootstrap.css' rel='stylesheet'/>
 <link type="text/css" href='styles/style2.css' rel='stylesheet'/>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 
 <div class="container-fluid main-wrapper-2" ng-controller="dashboardController">
 	<div class="row">
@@ -217,7 +218,7 @@
 				<div class="form-group">
 					<label class="col-lg-2 control-label"> Place </label>
 					<div class="col-lg-10">
-						<input class="form-control" id="location_picker" type="text" ng-model="event_place" placeholder="Event Location">
+						<input class="form-control" id="location_picker" type="text" ng-model="event_place" placeholder="Event Location" ng-change="updatePac()" googleplace/>
 					</div>
 				</div>
 				<div class="form-group">

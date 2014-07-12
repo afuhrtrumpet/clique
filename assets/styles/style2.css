@@ -168,3 +168,11 @@ img.settings {
 .block-content .block-time {
 	opacity: 0.5;
 }
+
+//For Google places autocomplete
+.pac-container {
+	z-index: 9999 !important;
+	position: fixed;
+	display: inline-block;
+	float: left;
+}
