@@ -99,6 +99,7 @@ img.settings {
 .side-block .side-block-time {
 	background: #d0d3d5;
   border-radius: 10px;
+  margin-left: 10px;
   padding: 7px;
   width: 50px;
 	color: #fff;
@@ -114,19 +115,16 @@ img.settings {
 	font-size: 13px;
 	color: #75df8a;
 	font-weight: 600;
-	margin-left: -20px;
 }
 
 .side-block .block-place-list {
 	text-align: left;
 	font-size: 10px;
-	margin-left: -70px;
 }
 
 .side-block .block-time-list {
 	text-align: left;
 	font-size: 10px;
-	margin-left: -70px;
 }
 
 .block-content {
