@@ -3,7 +3,10 @@
 cliqueApp
 	.controller('createEventController', function($scope, $http) {
 		$scope.location = "";
-		$('#location_picker').geocomplete();
+
+		$scope.gPlace;
+
+		//$('#location_picker').geocomplete();
 
 		$scope.submit = function() {
 			$http({
@@ -14,5 +17,12 @@ cliqueApp
 				console.log(data);
 			});
 			console.log("Button clicked");
+		};
+
+		$scope.update = function() {
+			console.log("Update");
+			if (!$scope.$$phase) {
+				$scope.$apply();
+			}
 		};
 	});
