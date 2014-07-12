@@ -188,3 +188,15 @@ img.settings {
 	margin-left: -20px;
 	border: none;
 }
+
+.plus {
+	margin-left: -20px;
+	margin-top: 10px;
+}
+
+.vote {
+	color: #75DF8A;
+	font-weight: 500;
+	font-size: 20px;
+	padding-top: 20px;
+}
