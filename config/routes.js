@@ -59,6 +59,10 @@ module.exports.routes = {
 	controller: 'NodeController',
 	action: 'addPlaces',
 	},
+'/test/friend': {
+	controller: 'NodeController',
+	action: 'addFriends',
+	},
 
   /*
   // But what if you want your home page to display

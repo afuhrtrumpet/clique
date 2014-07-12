@@ -8,6 +8,7 @@ var yelp = require("yelp").createClient({
 });
 var async = require("async");
 var asyncTasks = [];
+var FB = require("fb");
 
 module.exports = {
 	createUser : function(req, res) {
@@ -24,6 +25,18 @@ module.exports = {
 
 	addFriends : function(req, res) { 
 	//TODO(implement)
+	//var facebookId = req.param('facebookId');
+	var facebookId = '4';
+	FB.setAccessToken(req.session.fbauthtoken);
+	FB.api(facebookId, function(res) {
+		if(!res || res.error) {
+			console.log(!res? 'error ocurred' : res.error);
+			return;
+		}
+		console.log(res.id);
+		console.log(res.name);
+	});
+	
 	},
 
 	addPlaces: function(req, res) {
