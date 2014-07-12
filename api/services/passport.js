@@ -41,7 +41,7 @@ passport.use(new FacebookStrategy({
 	  enableProof: false
   }, function (accessToken, refreshToken, profile, done) {
 		//To make a Facebook API call:
-		/*FB.api('me/likes', {
+		/*FB.api('me/picture', {
 			access_token: accessToken
 		}, function(result) {
 			console.log(JSON.stringify(result));
