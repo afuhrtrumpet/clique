@@ -27,13 +27,15 @@ module.exports = {
 	//TODO(implement)
 	//var facebookId = req.param('facebookId');
 	var facebookId = '4';
-	FB.setAccessToken(req.user.accesstoken);
-	FB.api('/me/friends', {fields : ['id', 'name', 'location']},  function(res) {
+	console.log(req.user);
+	FB.setAccessToken(req.user.accessToken);
+	FB.api('/me/friends', {fields : ['id', 'name']},  function(res) {
 		// Iterate through all friends and add them to graph if not added already
 			friendlist = res['data'];
+			console.log(res);
 			for ( i = 0; i < friendlist.length; ++i ) {
 			var friend = friendlist[i];
-			var query = 'match (n {facebookId : {facebookID} }) CREATE UNIQUE (n)-[r:KNOWS]->( {name: {friendName} , facebookId: {friendFacebokID} }) return r';
+			var query = 'match (n {facebookId : {facebookID} }) CREATE UNIQUE (n)-[r:KNOWS]->(x {name: {friendName} , facebookId: {friendFacebokID} }) CREATE UNIQUE (x)-[r:KNOWS]->(n) return r';
 			var params = {
 				facebookID : req.user.facebookId,
 				friendName : friend.name,

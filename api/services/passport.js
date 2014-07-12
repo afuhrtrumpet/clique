@@ -78,6 +78,13 @@ passport.use(new FacebookStrategy({
 
       // If there is already a user, return it
       } else {
+				User.update({
+					facebookId: profile.id},
+					{ accessToken: accessToken},
+					function(err, users) {
+						if (err) { console.log(err); } });
+		
+						
 				user.accessToken = accessToken;
 				return done(null, user, {
 					message: 'Logged In Successfully'
