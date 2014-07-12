@@ -5,6 +5,7 @@
 cliqueApp
 	.controller('dashboardController', function($scope, $modal, $http) {
 		
+
 		// notes editing
 	  $scope.createEvent = function () {
 	    var modalInstance = $modal.open({
@@ -25,6 +26,8 @@ cliqueApp
 
 	var eventCreateFunction = function($scope, $modalInstance, $http) {
 
+	$('#location_picker').geocomplete();
+
 	$scope.submitEvent = function(event_name, event_details, event_place, event_start_date, event_end_date) {
 		var msg_body = {
 			event_name: event_name,
@@ -44,4 +47,46 @@ cliqueApp
   $scope.cancel = function () {
     $modalInstance.dismiss('cancel');
   };
+
+	// calendar
+  $scope.open = function($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    $scope.opened = true;
+  };
+
+   // Disable weekend selection
+  $scope.disabled = function(date, mode) {
+    return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+  };
+
+   $scope.dateOptions = {
+    formatYear: 'yy',
+    startingDay: 1
+  };
+  $scope.initDate = new Date('2016-15-20');
+  $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+  $scope.format = $scope.formats[0];
+
+  // calendar
+  $scope.open2 = function($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    $scope.opened2 = true;
+  };
+
+   // Disable weekend selection
+  $scope.disabled2 = function(date2, mode2) {
+    return ( mode2 === 'day' && ( date2.getDay() === 0 || date2.getDay() === 6 ) );
+  };
+
+   $scope.dateOptions2 = {
+    formatYear: 'yy',
+    startingDay: 1
+  };
+  $scope.initDate2 = new Date('2016-15-20');
+  $scope.formats2 = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+  $scope.format2 = $scope.formats2[0];
 }

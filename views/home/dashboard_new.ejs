@@ -217,16 +217,30 @@
 				<div class="form-group">
 					<label class="col-lg-2 control-label"> Place </label>
 					<div class="col-lg-10">
-						<input class="form-control" type="text" ng-model="event_place" placeholder="Event Location">
+						<input class="form-control" id="location_picker" type="text" ng-model="event_place" placeholder="Event Location">
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-lg-2 control-label"> Place </label>
 					<div class="col-lg-5">
-						<input class="form-control" type="text" ng-model="event_start_date" placeholder="Start Date">
+						<p class="input-group">
+							<input class="form-control" type="text" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'", datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true", close-text="Close" placeholder="Start Date" />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open($event)">
+									<i class="glyphicon glyphicon-calendar"></i>
+								</button>
+							</span>
+						</p>
 					</div>
 					<div class="col-lg-5">
-						<input class="form-control" type="text" ng-model="event_end_date" placeholder="End Date">
+						<p class="input-group">
+						<input class="form-control" type="text" datepicker-popup="{{format2}}" ng-model="dt2" is-open="opened2" min-date="minDate2" max-date="'2015-06-22'", datepicker-options="dateOptions2" date-disabled="disabled2(date2, mode2)" ng-required="true", close-text="Close" placeholder="End Date" />
+						<span class="input-group-btn">
+							<button type="button" class="btn btn-default" ng-click="open2($event)">
+								<i class="glyphicon glyphicon-calendar"></i>
+							</button>
+						</span>
+					</p>
 					</div>
 				</div>
 			</form>
