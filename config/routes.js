@@ -63,6 +63,9 @@ module.exports.routes = {
   '/dashboard_new': {
     view: 'home/dashboard_new'
   },
+  '/event': {
+    view: 'home/viewEvent'
+  },
 	'/partials/eventForm': {
 		view:	'partials/eventForm'
 	},
