@@ -33,6 +33,10 @@ module.exports.routes = {
 		controller: 'home',
 		action: 'index'
   },
+	'/data': {
+		controller: 'DataController',
+		action: 'getData'
+	},
 	'post /test/createSimilarity' : {
 		controller : 'NodeController',
 		action : 'createSimilarity'

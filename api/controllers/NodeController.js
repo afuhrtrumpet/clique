@@ -140,6 +140,11 @@ module.exports = {
 		//return places;
 	},
 
+addRatings: function (req,res) {
+		
+	res.send(200);
+},
+
 createSimilarity : function(req, res) {
 		// Return a list of suggested places by the recommendation algorithm
 		FB.setAccessToken(req.user.accessToken);
