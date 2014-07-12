@@ -61,13 +61,16 @@ img.settings {
 
 .sub-heading {
 	padding-bottom: 20px;
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #A2A7AB;
 }
 
 .block-content {
 	margin-top: 10px;
 	list-style: none;
 	margin-left: -35px;
+	padding-bottom: 15px;
+	border-bottom: 1px #A2A7AB solid;
+
 }
 
 .block-content .block-content-bottom {
@@ -84,7 +87,7 @@ img.settings {
 }
 
 .block-content .block-content-bottom {
-	margin-top: 5px;
+	margin-top: 10px;
 	font-family: "Roboto";
 	font-size: 12px;
 	margin-bottom: 20px;
@@ -107,8 +110,7 @@ img.settings {
 .left-wrapper { 
 	margin-top:14px;
 	margin-left: 24px;
-	border-bottom: 1px solid #000;
-	border-right: 1px solid #000;
+	border-right: 1px solid #A2A7AB;
 }
 
 .heading {
@@ -152,19 +154,37 @@ img.settings {
 
 .time1 {
 	font-size: 12px;
-	margin-left: 30px;
+	margin-left: 65px;
 }
 
 .timer-wrapper {
 	font-family: "Roboto";
 	font-size: 26px;
+	margin-left: 0px;
+	margin-bottom: 20px;
 }
 
 .timer-s {
-	font-size: 10px;
+	font-size: 12px;
 	margin-top: 10px;
+	text-align: center;
+	margin-left: -10px;
+}
+
+.timer-12 {
+	margin-left: 50px;
 }
 
 .timer1-s, .timer2-s, .timer3-s {
 	font-size: 14px;
+}
+
+.right-wrapper {
+	margin-left: 10px;
+}
+
+.grid-wrapper {
+	margin-top: 30px;
+	margin-left: -20px;
+	border: none;
 }
