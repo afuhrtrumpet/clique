@@ -7,7 +7,7 @@ var yelp = require("yelp").createClient({
   token_secret: "WnPKoKFykMY-Bu3ivFUx_SmnZKU"
 });
 var async = require("async");
-var asyncTasks = [];
+
 var FB = require("fb");
 
 module.exports = {
@@ -51,6 +51,7 @@ module.exports = {
 	}, // end addFriends
 
 	addPlaces: function(req, res) {
+		var functionArray = [];
 		//var place_name = req.param('place');
 		place_name = "Mountain View"; // for debugging only
 		//scraping yelp
@@ -58,11 +59,13 @@ module.exports = {
 			// See http://www.yelp.com/developers/documentation/v2/search_api
 			yelp.search({term: "restaurant", location: place_name, offset: o}, 
 				function(error, data) {
+				console.log(data.businesses);
+				console.log(data.businesses.length);
 				if (data.businesses==undefined) console.log(data);
 				for (var i = 0; i < data.businesses.length; i++) {
 					var place = data.businesses[i];
 					var query = 
-						'MATCH (n {yelpId: {yelpID} }) RETURN n.yelpId';
+							'MATCH (n {yelpId: {yelpID} }) RETURN n.yelpId';
 					var params = {
 						yelpID : place.id
 					};
@@ -91,16 +94,23 @@ module.exports = {
 							} else {
 								console.log('Saved new place node to db');
 							}
-						});
-						}
-					});
-						//console.log({yelpID: place.id, yelpRating:place.rating, 
-						//categories: place.categories, location: place.location});
-					}
-				});
-		}
+						}); } });
+						//console.log({yelpID: place.id, yelpRating:place.rating,				//categories: place.categories, location: place.location});
+					} }); 
+	}
 		//return places;
 	},
+
+suggestPlaces : function(req, res) {
+		// Return a list of suggested places by the recommendation algorithm
+},
+
+addSuggestions : function(req, res) {
+	// Add a suggestion by a user
+	console.log(req.params);
+
+},
+
 		
 }
 

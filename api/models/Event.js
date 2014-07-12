@@ -27,6 +27,12 @@ module.exports = {
 			unique: false
 		},
 
+		suggestedLocations : {
+			type : 'array',
+			required : false,
+			unique: false
+		},
+
 		 	
   	/* e.g.
   	nickname: 'string'
