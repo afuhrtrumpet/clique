@@ -47,6 +47,8 @@ passport.use(new FacebookStrategy({
 			console.log(JSON.stringify(result));
 		});*/
 
+		console.log(accessToken);
+
     findByFacebookId(profile.id, function (err, user) {
 
 			console.log(JSON.stringify(profile));
@@ -56,8 +58,7 @@ passport.use(new FacebookStrategy({
         User.create({
 
           facebookId: profile.id,
-					name: profile.displayName,
-					accessToken: accessToken
+					name: profile.displayName
 
           // You can also add any other data you are getting back from Facebook here 
           // as long as it is in your model
@@ -76,12 +77,9 @@ passport.use(new FacebookStrategy({
 
       // If there is already a user, return it
       } else {
-				user.update({
-					accessToken: accessToken
-				}).done(function(err) {
-					return done(null, user, {
-						message: 'Logged In Successfully'
-					});
+				user.accessToken = accessToken;
+				return done(null, user, {
+					message: 'Logged In Successfully'
 				});
       }
     });

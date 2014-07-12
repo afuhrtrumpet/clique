@@ -37,6 +37,7 @@ module.exports = {
 				function(err, user) {
 					req.logIn(user, function(err) {
 						if (err) {
+							console.log(err);
 							req.session.flash = 'There was an error';
 							res.redirect('user/login');
 						} else {
