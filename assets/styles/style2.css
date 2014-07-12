@@ -51,6 +51,7 @@ img.settings {
 /** content **/
 
 .create-event {
+	cursor: pointer;
 	width: 220px;
 	height: 40px;
 	margin-left: 5px;
