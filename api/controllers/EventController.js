@@ -43,6 +43,7 @@ module.exports = {
 
 		var eventId = req.param("id");
 		if (!req.session.user) {
+			req.session.eventId = eventId;
 		res.redirect('/user/facebook', {"id": req.param("id")});
 			/*passport.authenticate('facebook', { scope: ['public_profile',  'read_friendlists', 'email', 'user_about_me', 'user_likes', 'user_friends']},
 					function(err, user) {
