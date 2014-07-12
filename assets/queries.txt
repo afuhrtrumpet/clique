@@ -1,0 +1,96 @@
+START n = node(*) 
+OPTIONAL MATCH (n)-[r]-()
+DELETE r,n;
+
+CREATE (n:Person {name: "Akshay Dixit", facebookId: "1645861312" });
+CREATE (n:Person {name: "Prashish Rajbhandari", facebookId: "674180496"});
+CREATE (n:Person {name: "Feiran Chen", facebookId: "685255878216969"});
+CREATE (n:Person {name: "Alex Fuhr", facebookId: "755651824485577"});
+CREATE (n:Person {name: "Andre Tacuyan", facebookId: "10201701423602152"});
+CREATE (n:Person {name: "Sai Sri Sathya", facebookId: "100002854428454"});
+CREATE (n:Person {name: "Albert Koy", facebookId: "563280532"});
+CREATE (n:Person {name: "Vivek Phuloria", facebookId: "100000052120958"});
+
+CREATE (e:EVENT {creatorId: "1645861312",
+								 eventName: "Post Hackday Party",
+								 eventLocation: "Mountain View",
+								 eventDetails: "Party after hacking 20 hours straight!",
+								 eventStart: "6PM",
+								 eventEnd: "9PM"
+								});
+CREATE (e:EVENT {creatorId: "1645861312",
+								 eventName: "FIFA 2014 Final!",
+								 eventLocation: "Sunnyvale",
+								 eventDetails: "Germany vs Argentina! GO MESSI!!",
+								 eventStart: "12PM",
+								 eventEnd: "2PM"
+								});
+CREATE (e:EVENT {creatorId: "1645861312",
+								 eventName: "Lunch at Castro",
+								 eventLocation: "Mountain View",
+								 eventDetails: "A small get together for some chat and grub",
+								 eventStart: "1PM",
+								 eventEnd: "2PM"
+								});
+			
+MATCH (a:Person),(b:Person) 
+WHERE a.name = "Akshay Dixit" AND b.name = "Prashish Rajbhandari"
+CREATE (a)-[r:KNOWS { strength: 2 }]->(b)
+CREATE (b)-[s:KNOWS {strength: 2}]->(a)
+RETURN r;
+MATCH (a:Person),(b:Person) 
+WHERE a.name = "Akshay Dixit" AND b.name = "Alex Fuhr"
+CREATE (a)-[r:KNOWS { strength: 1 }]->(b)
+CREATE (b)-[s:KNOWS {strength: 1}]->(a)
+RETURN r;
+MATCH (a:Person),(b:Person) 
+WHERE a.name = "Akshay Dixit" AND b.name = "Andre Tacuyan"
+CREATE (a)-[r:KNOWS { strength: 1 }]->(b)
+CREATE (b)-[s:KNOWS {strength: 1}]->(a)
+RETURN r;
+MATCH (a:Person),(b:Person) 
+WHERE a.name = "Akshay Dixit" AND b.name = "Sai Sri Sathya"
+CREATE (a)-[r:KNOWS { strength: 3 }]->(b)
+CREATE (b)-[s:KNOWS {strength: 3}]->(a)
+RETURN r;
+MATCH (a:Person),(b:Person) 
+WHERE a.name = "Akshay Dixit" AND b.name = "Albert Koy"
+CREATE (a)-[r:KNOWS { strength: 1 }]->(b)
+CREATE (b)-[s:KNOWS {strength: 1}]->(a)
+RETURN r;
+MATCH (a:Person),(b:Person) 
+WHERE a.name = "Akshay Dixit" AND b.name = "Vivek Phuloria"
+CREATE (a)-[r:KNOWS { strength: 1 }]->(b)
+CREATE (b)-[s:KNOWS {strength: 1}]->(a)
+RETURN r;
+MATCH (a:Person),(b:Person) 
+WHERE a.name = "Akshay Dixit" AND b.name = "Feiran Chen"
+CREATE (a)-[r:KNOWS { strength: 2 }]->(b)
+CREATE (b)-[s:KNOWS {strength: 2}]->(a)
+RETURN r;
+MATCH (a:Person),(b:Person) 
+WHERE a.name = "Feiran Chen" AND b.name = "Prashish Rajbhandari"
+CREATE (b)-[s:KNOWS {strength: 2}]->(a)
+CREATE (a)-[r:KNOWS { strength: 2 }]->(b)
+RETURN r;
+MATCH (a:Person),(b:Person) 
+WHERE a.name = "Andre Tacuyan" AND b.name = "Alex Fuhr"
+CREATE (b)-[s:KNOWS {strength: 2}]->(a)
+CREATE (a)-[r:KNOWS { strength: 2 }]->(b)
+RETURN r;
+MATCH (a:Person),(b:Person) 
+WHERE a.name = "Alex Fuhr" AND b.name = "Feiran Chen"
+CREATE (a)-[r:KNOWS { strength: 3 }]->(b)
+CREATE (b)-[s:KNOWS {strength: 3}]->(a)
+RETURN r;
+MATCH (a:Person),(b:Person) 
+WHERE a.name = "Vivek Phuloria" AND b.name = "Sai Sri Sathya"
+CREATE (a)-[r:KNOWS { strength: 1 }]->(b)
+CREATE (b)-[s:KNOWS {strength: 1}]->(a)
+RETURN r;
+MATCH (a:Person),(b:Person) 
+WHERE a.name = "Andre Tacuyan" AND b.name = "Albert Koy"
+CREATE (a)-[r:KNOWS { strength: 2 }]->(b)
+CREATE (b)-[s:KNOWS { strength: 2}]->(a)
+RETURN r;
+
