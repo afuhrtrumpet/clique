@@ -1,0 +1,170 @@
+
+/** dashboard **/
+body {
+	background: #d0d3d5;
+}
+
+.top-banner {
+	height: 100px;
+	background: #2f3a4a;
+}
+
+.logo-img-2 {
+	margin-top: 30px;
+	height: 35px;
+	width: 95px;
+}
+
+.top-notification {
+	margin-top: 25px;
+}
+
+.top-notification img {
+	height: 35px;
+	width: 35px;
+}
+
+img.notification {
+	margin-top: -2px;
+	height: 43px;
+	width: 43px;
+}
+
+img.settings {
+	height: 27px;
+	width: 27px;
+}
+
+.input-group {
+	padding: 0px;
+	margin: 0px;
+}
+
+.search-bar {
+	padding-top: 10px;
+}
+
+.form-control {
+	display: inline;
+}
+
+
+/** content **/
+.main-wrapper {
+	margin-top: 30px;
+	padding: 15px;
+	margin-left: 0px;
+	background: #fff;
+  border-radius: 10px;
+  min-height: 600px;
+}
+
+.sub-heading {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #000;
+}
+
+.block-content {
+	margin-top: 10px;
+	list-style: none;
+	margin-left: -35px;
+}
+
+.block-content .block-content-bottom {
+}
+.block-content .block-pic {
+	height: 50px;
+	width: 50px;
+}
+
+.block-content .block-content-top {
+	font-family: "Roboto";
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.block-content .block-content-bottom {
+	margin-top: 5px;
+	font-family: "Roboto";
+	font-size: 12px;
+	margin-bottom: 20px;
+}
+
+.block-content .block-person-name {
+	color: #51c0ff;
+	font-weight: 600;
+}
+
+.block-content .block-event-name {
+	color: #75df8a;
+	font-weight: 600;
+}
+
+.block-content .block-time {
+	opacity: 0.5;
+}
+
+.left-wrapper { 
+	margin-top:14px;
+	margin-left: 24px;
+	border-bottom: 1px solid #000;
+	border-right: 1px solid #000;
+}
+
+.heading {
+	color: #75DF8A;
+	font-size: 24px;
+}
+
+.sub-heading {
+	font-size: 12px;
+}
+
+.name {
+	color: #51C0FF;
+	font-weight: 500;
+}
+
+.top-title {
+	margin-top: 10px;
+	font-family: "Roboto";
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.see_more {
+	margin-top: -30px;
+	font-size: 12px;
+	margin-left: 8px;
+}
+
+.top-title-2 {
+	margin-top: 10px;
+	font-family: "Roboto";
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.timer-wrapper {
+	margin-top: 0px;
+	margin-left: 40px;
+}
+
+.time1 {
+	font-size: 12px;
+	margin-left: 30px;
+}
+
+.timer-wrapper {
+	font-family: "Roboto";
+	font-size: 26px;
+}
+
+.timer-s {
+	font-size: 10px;
+	margin-top: 10px;
+}
+
+.timer1-s, .timer2-s, .timer3-s {
+	font-size: 14px;
+}

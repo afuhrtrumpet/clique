@@ -33,6 +33,10 @@ module.exports.routes = {
 		controller: 'home',
 		action: 'index'
   },
+	'/data': {
+		controller: 'DataController',
+		action: 'getData'
+	},
 	'post /test/createSimilarity' : {
 		controller : 'NodeController',
 		action : 'createSimilarity'
@@ -62,6 +66,9 @@ module.exports.routes = {
 	},
   '/dashboard_new': {
     view: 'home/dashboard_new'
+  },
+  '/event': {
+    view: 'home/viewEvent'
   },
 	'/partials/eventForm': {
 		view:	'partials/eventForm'
