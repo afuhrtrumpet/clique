@@ -277,3 +277,8 @@ textarea {
 	display: inline-block;
 	float: left;
 }
+
+.notification-number {
+	font-size: 7px;
+	font-color: #fff;
+}
