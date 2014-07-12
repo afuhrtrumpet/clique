@@ -11,7 +11,10 @@
         "optimist": "0.3.4",
 				"fb":"*",
 				"passport":"*",
-				"passport-facebook":"*"
+				"passport-facebook":"*",
+				"neo4j":"*",
+				"yelp":"*",
+				"async":"*"
     },
     "scripts": {
         "start": "node app.js",
