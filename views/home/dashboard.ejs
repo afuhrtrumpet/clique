@@ -34,7 +34,7 @@ console.log("<%- user.id %>");
 				<div class="content-wrapper">
 					<ul class="block-content">
 
-						<li ng-repeat="event in events" class="block-list">
+						<li ng-repeat="event in events | filter: query" class="block-list">
 							<div class="row">
 								<div class="col-lg-2">
 									<img class="block-pic" src="images/Avatar1.png" />

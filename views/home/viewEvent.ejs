@@ -5,7 +5,7 @@
 <link type="text/css" href='styles/style3.css' rel='stylesheet'/>
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 
-<div class="container-fluid main-wrapper-2" ng-controller="viewController">
+<div class="container-fluid main-wrapper-2" ng-controller="viewEventController">
 	<div class="row">
 		<div class="col-lg-12 top-banner">
 			<div class="row">
@@ -178,9 +178,9 @@
 					</div>
 					<div class="row">
 						<div class="col-lg-12">
-							<span class="timer1"> 00 </span> :
-							<span class="timer2"> 00 </span> :
-							<span class="timer3"> 00 </span>
+							<span class="timer1"> {{hours}} </span> :
+							<span class="timer2"> {{minutes}} </span> :
+							<span class="timer3"> {{seconds}} </span>
 						</div>
 					</div>
 					<div class="row timer-s">
