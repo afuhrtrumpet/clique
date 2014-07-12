@@ -65,6 +65,7 @@ passport.use(new FacebookStrategy({
 
         }).done(function (err, user) {
           if (user) {
+						user.accessToken = accessToken;
             return done(null, user, {
               message: 'Logged In Successfully'
             });
