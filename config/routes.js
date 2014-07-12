@@ -58,9 +58,19 @@ module.exports.routes = {
   '/dashboard_new': {
     view: 'home/dashboard_new'
   },
-'/test/place': {
+	'/partials/eventForm': {
+		view:	'partials/eventForm'
+	},
+	'/test/place': {
+		controller: 'NodeController',
+		action: 'addPlaces',
+	},
+	'/createEvent': {
+		view: 'home/createEvent'
+	},
+'/test/friend': {
 	controller: 'NodeController',
-	action: 'addPlaces',
+	action: 'addFriends',
 	},
 
   /*

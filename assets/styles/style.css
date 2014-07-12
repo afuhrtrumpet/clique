@@ -69,15 +69,3 @@
     margin: 0 auto;
 }
 
-
-/** dashboard **/
-.top-banner {
-	position: absolute;
-	height: 100px;
-	background: #2f3a4a;
-}
-
-.logo-img-2 {
-	height: 28px;
-	width: 76px;
-}

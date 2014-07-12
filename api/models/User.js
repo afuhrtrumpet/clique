@@ -24,12 +24,6 @@ module.exports = {
 			unique: false
 		},
 
-		accessToken: {
-			type: 'string',
-			required: false,
-			unique: false
-		}
-
   },
 
 	//Lifecycle callbacks

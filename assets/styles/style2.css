@@ -1,0 +1,169 @@
+
+/** dashboard **/
+body {
+	background: #d0d3d5;
+}
+
+.top-banner {
+	height: 100px;
+	background: #2f3a4a;
+}
+
+.logo-img-2 {
+	margin-top: 30px;
+	height: 35px;
+	width: 95px;
+}
+
+.top-notification {
+	margin-top: 25px;
+}
+
+.top-notification img {
+	height: 35px;
+	width: 35px;
+}
+
+img.notification {
+	margin-top: -2px;
+	height: 43px;
+	width: 43px;
+}
+
+img.settings {
+	height: 27px;
+	width: 27px;
+}
+
+.input-group {
+	padding: 0px;
+	margin: 0px;
+}
+
+.search-bar {
+	padding-top: 10px;
+}
+
+.form-control {
+	display: inline;
+}
+
+/** content **/
+
+.create-event {
+	width: 220px;
+	height: 40px;
+	margin-left: 5px;
+}
+
+.content-wrapper {
+	margin-top: 30px;
+	padding: 15px;
+	margin-left: 0px;
+	width: 100%;
+	background: #fff;
+  border-radius: 10px;
+  min-height: 600px;
+}
+
+
+.side-wrapper {
+	margin-top: 30px;
+}
+
+.side-block {
+	margin-top: 20px;
+	padding-bottom: 20px;
+	width: 100%;
+	background: #fff;
+  border-radius: 10px;
+	min-height: 200px;
+	width: 230px;
+}
+
+.side-block .heading {
+	font-family: "Roboto";
+	font-size: 20px;
+	text-align: center;
+	border-bottom: 1px solid #a2a7ab;
+	padding-bottom: 10px;
+}
+
+.side-block .side-content {
+	text-align: center;
+	margin-top: 10px;
+}
+
+
+.side-block .side-block-time {
+	background: #d0d3d5;
+  border-radius: 10px;
+  padding: 7px;
+  width: 50px;
+	color: #fff;
+	font-weight: 600;
+}
+
+.side-block .side-content {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.side-block .block-event-name {
+	font-size: 13px;
+	color: #75df8a;
+	font-weight: 600;
+	margin-left: -20px;
+}
+
+.side-block .block-place-list {
+	text-align: left;
+	font-size: 10px;
+	margin-left: -70px;
+}
+
+.side-block .block-time-list {
+	text-align: left;
+	font-size: 10px;
+	margin-left: -70px;
+}
+
+.block-content {
+	list-style: none;
+	margin-left: -35px;
+}
+
+.block-content .block-content-bottom {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #a2a7ab;
+}
+.block-content .block-pic {
+	height: 68px;
+	width: 68px;
+}
+
+.block-content .block-content-top {
+	margin-top: 15px;
+	font-family: "Roboto";
+	font-size: 12px;
+}
+
+.block-content .block-content-bottom {
+	margin-top: 15px;
+	font-family: "Roboto";
+	font-size: 10px;
+}
+
+.block-content .block-person-name {
+	color: #51c0ff;
+	font-weight: 600;
+}
+
+.block-content .block-event-name {
+	color: #75df8a;
+	font-weight: 600;
+}
+
+.block-content .block-time {
+	opacity: 0.5;
+}

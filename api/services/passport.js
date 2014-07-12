@@ -41,11 +41,13 @@ passport.use(new FacebookStrategy({
 	  enableProof: false
   }, function (accessToken, refreshToken, profile, done) {
 		//To make a Facebook API call:
-		/*FB.api('me/likes', {
+		/*FB.api('me/picture', {
 			access_token: accessToken
 		}, function(result) {
 			console.log(JSON.stringify(result));
 		});*/
+
+		console.log(accessToken);
 
     findByFacebookId(profile.id, function (err, user) {
 
@@ -56,14 +58,14 @@ passport.use(new FacebookStrategy({
         User.create({
 
           facebookId: profile.id,
-					name: profile.displayName,
-					accessToken: accessToken
+					name: profile.displayName
 
           // You can also add any other data you are getting back from Facebook here 
           // as long as it is in your model
 
         }).done(function (err, user) {
           if (user) {
+						user.accessToken = accessToken;
             return done(null, user, {
               message: 'Logged In Successfully'
             });
@@ -76,12 +78,16 @@ passport.use(new FacebookStrategy({
 
       // If there is already a user, return it
       } else {
-				user.update({
-					accessToken: accessToken
-				}).done(function(err) {
-					return done(null, user, {
-						message: 'Logged In Successfully'
-					});
+				User.update({
+					facebookId: profile.id},
+					{ accessToken: accessToken},
+					function(err, users) {
+						if (err) { console.log(err); } });
+		
+						
+				user.accessToken = accessToken;
+				return done(null, user, {
+					message: 'Logged In Successfully'
 				});
       }
     });

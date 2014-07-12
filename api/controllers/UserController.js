@@ -33,10 +33,11 @@ module.exports = {
 	},
 
 	'facebook': function(req, res, next) {
-		passport.authenticate('facebook', { scope: ['email', 'user_about_me', 'user_likes']},
+		passport.authenticate('facebook', { scope: ['public_profile',  'read_friendlists', 'email', 'user_about_me', 'user_likes', 'user_friends']},
 				function(err, user) {
 					req.logIn(user, function(err) {
 						if (err) {
+							console.log(err);
 							req.session.flash = 'There was an error';
 							res.redirect('user/login');
 						} else {
