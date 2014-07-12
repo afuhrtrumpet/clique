@@ -8,6 +8,7 @@ var yelp = require("yelp").createClient({
 });
 var async = require("async");
 var asyncTasks = [];
+var FB = require("fb");
 
 module.exports = {
 	createUser : function(req, res) {
@@ -24,7 +25,28 @@ module.exports = {
 
 	addFriends : function(req, res) { 
 	//TODO(implement)
-	},
+	//var facebookId = req.param('facebookId');
+	var facebookId = '4';
+	FB.setAccessToken(req.user.accesstoken);
+	FB.api('/me/friends', {fields : ['id', 'name', 'location']},  function(res) {
+		// Iterate through all friends and add them to graph if not added already
+			friendlist = res['data'];
+			for ( i = 0; i < friendlist.length; ++i ) {
+			var friend = friendlist[i];
+			var query = 'match (n {facebookId : {facebookID} }) CREATE UNIQUE (n)-[r:KNOWS]->( {name: {friendName} , facebookId: {friendFacebokID} }) return r';
+			var params = {
+				facebookID : req.user.facebookId,
+				friendName : friend.name,
+				friendFacebookID : friend.id
+			};
+			db.query(query, params, function(err, results) {
+				if (err) {
+					console.log(err);
+				}	
+			}); // end db.query
+			} // end for  loop
+		}); // end FB.api
+	}, // end addFriends
 
 	addPlaces: function(req, res) {
 		//var place_name = req.param('place');

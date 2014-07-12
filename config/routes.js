@@ -65,6 +65,10 @@ module.exports.routes = {
 	'/createEvent': {
 		view: 'home/createEvent'
 	},
+'/test/friend': {
+	controller: 'NodeController',
+	action: 'addFriends',
+	},
 
   /*
   // But what if you want your home page to display
