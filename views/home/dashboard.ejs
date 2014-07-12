@@ -147,6 +147,31 @@
 						Upcoming events
 					</div>
 
+					<div ng-repeat="event in events" class="side-content">
+						<div class="row">
+							<div class="col-lg-2 col-lg-push-1 side-block-time">
+								13 Aug
+							</div>
+							<div class="col-lg-9 col-lg-push-1">
+								<div class="row">
+									<div class="col-lg-12">
+										<span class="block-event-name pull-left">{{event.eventName}}</span>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-12 side-content-bottom">
+										<img class="pull-left" width="15px" height="15px" src="images/Pin.png" /> <span class="block-place-list pull-left">{{event.eventLocation}}</span>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-12 side-content-bottom">
+										<img class="pull-left" width="15px" height="15px" src="images/Clock.png" /><span class="block-time-list pull-left">5PM-8PM</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
 					<div class="side-content">
 						<div class="row">
 							<div class="col-lg-2 col-lg-push-1 side-block-time">

@@ -7,7 +7,8 @@ cliqueApp
 
     $http.get('/test/event').success(
       function(data) {
-        $scope.events = data; 
+        $scope.events = data;
+        console.log(data)
       }
     );
 
