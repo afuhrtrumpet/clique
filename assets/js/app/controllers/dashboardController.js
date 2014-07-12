@@ -25,7 +25,12 @@ cliqueApp
 
 var eventCreateFunction = function($scope, $modal, $modalInstance, $http) {
 
-	$('#location_picker').geocomplete();
+		$scope.gPlace;
+
+		$scope.updatePac = function() {
+			console.log("Change");
+			$('.pac-container').css('z-index', '9999');
+		};
 
 	$scope.submitEvent = function(event_name, event_details, event_place, event_start_date, event_end_date) {
 		var msg_body = {

@@ -169,7 +169,6 @@ img.settings {
 	opacity: 0.5;
 }
 
-
 /** create event **/
 .control-label, .modal-title {
 	font-family: "Roboto";
@@ -271,4 +270,12 @@ textarea {
 .btn-done:hover {
 	background-color: #75df8a;
 	color: #fff;
+}
+
+//For Google places autocomplete
+.pac-container {
+	z-index: 9999 !important;
+	position: fixed;
+	display: inline-block;
+	float: left;
 }
