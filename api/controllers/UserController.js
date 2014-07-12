@@ -33,7 +33,8 @@ module.exports = {
 	},
 
 	'facebook': function(req, res, next) {
-		console.log(req.param("id"));
+		eventId = req.session.eventId;
+		console.log(eventId);
 		passport.authenticate('facebook', { scope: ['public_profile',  'read_friendlists', 'email', 'user_about_me', 'user_likes', 'user_friends']},
 				function(err, user) {
 					req.logIn(user, function(err) {
@@ -43,10 +44,10 @@ module.exports = {
 							res.redirect('user/login');
 						} else {
 							req.session.user = user;
-							if (req.param("id")) {
+							if (eventId) {
 								Event.findOne({id: eventId}, function(err, event) {
 									if (err)
-									console.log(err);
+										console.log(err);
 									else if (req.session.user) {
 										event.userIds.push(req.session.user.id);
 										event.update({
