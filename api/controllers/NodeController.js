@@ -234,7 +234,7 @@ updateEvent: function(req , res) {
 },
 
 createEvent : function(req, res) {
-	console.log(req.params);
+	console.log("Function called : createEvent");	
 	var eName = req.param('event_name');
 	var ePlace = req.param('event_place');
 	var eCreatorId = req.user.facebookId;
@@ -254,7 +254,7 @@ createEvent : function(req, res) {
 	  });
 	eventNode.save(function(err, node) {
 		if (err) { console.log("Error saving new event node"); } else { console.log("Created event node"); }
-	});
+	
 	// Invite people to event 
 	/*
 		for ( var i = 0; i < e.userIds.length; ++i ) {
@@ -263,6 +263,7 @@ createEvent : function(req, res) {
 	}
 */
 res.send(200);
+});
 },
 	
 getEvent : function(req, res) {

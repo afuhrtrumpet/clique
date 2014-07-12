@@ -42,7 +42,7 @@ var eventCreateFunction = function($scope, $modal, $modalInstance, $http) {
 		}
 
 		$http.post('/test/event', msg_body).success(function(res) {
-			//console.log(msg_body);
+			console.log(msg_body);
 			//$modalInstance.close();
 			$scope.cancel();
 			$scope.nextEventPage();
