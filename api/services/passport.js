@@ -29,6 +29,7 @@ passport.serializeUser(function (user, done) {
 });
 
 passport.deserializeUser(function (id, done) {
+  console.log('enter2');
   findById(id, function (err, user) {
     done(err, user);
   });
@@ -47,7 +48,7 @@ passport.use(new FacebookStrategy({
 		}, function(result) {
 			console.log(JSON.stringify(result));
 		});*/
-
+  
     findByFacebookId(profile.id, function (err, user) {
 
 			console.log(JSON.stringify(profile));
