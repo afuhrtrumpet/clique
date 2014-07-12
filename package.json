@@ -1,30 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "facebookTest",
-  "private": true,
-  "version": "0.0.0",
-  "description": "a Sails application",
-  "dependencies": {
-    "ejs": "0.8.4",
-    "fb": "*",
-    "grunt": "0.4.1",
-    "neo4j": "^1.1.0",
-    "optimist": "0.3.4",
-    "passport": "*",
-    "passport-facebook": "*",
-    "sails": "0.9.16",
-    "sails-disk": "~0.9.0",
-    "yelp": "^0.1.1"
-  },
-  "scripts": {
-    "start": "node app.js",
-    "debug": "node debug app.js"
-  },
-  "main": "app.js",
-  "repository": "",
-  "author": "",
-  "license": ""
-=======
     "name": "facebookTest",
     "private": true,
     "version": "0.0.0",
@@ -50,5 +24,4 @@
     "repository": "",
     "author": "",
     "license": ""
->>>>>>> neo4j
 }

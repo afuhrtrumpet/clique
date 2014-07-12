@@ -41,7 +41,6 @@ passport.use(new FacebookStrategy({
 	  callbackURL: "/user/facebook/callback",
 	  enableProof: false
   }, function (accessToken, refreshToken, profile, done) {
-		req.session.fbauthtoken = accessToken;
 		//To make a Facebook API call:
 		/*FB.api('me/likes', {
 			access_token: accessToken
@@ -58,7 +57,8 @@ passport.use(new FacebookStrategy({
         User.create({
 
           facebookId: profile.id,
-					name: profile.displayName
+					name: profile.displayName,
+					accessToken: accessToken
 
           // You can also add any other data you are getting back from Facebook here 
           // as long as it is in your model
@@ -77,9 +77,13 @@ passport.use(new FacebookStrategy({
 
       // If there is already a user, return it
       } else {
-        return done(null, user, {
-          message: 'Logged In Successfully'
-        });
+				user.update({
+					accessToken: accessToken
+				}).done(function(err) {
+					return done(null, user, {
+						message: 'Logged In Successfully'
+					});
+				});
       }
     });
   }
