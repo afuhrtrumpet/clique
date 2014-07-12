@@ -151,11 +151,39 @@ module.exports = function (grunt) {
       },
       build: {
         files: [
-          {
+        {
           expand: true,
           cwd: '.tmp/public',
           src: ['**/*'],
           dest: 'www'
+        },
+        {
+          expand: true, cwd: 'bower_components/jquery/dist',
+          src: ['jquery.js'], dest: 'assets/lib/jquery'
+        },
+        {
+          expand: true, cwd: 'bower_components/angular',
+          src: ['angular.js'], dest: 'assets/lib/angular'
+        },
+        {
+          expand: true, cwd: 'bower_components/angular-route',
+          src: ['angular-route.js'], dest: 'assets/lib/angular'
+        },
+        {
+          expand: true, cwd: 'bower_components/angular-resource',
+          src: ['angular-resource.js'], dest: 'assets/lib/angular'
+        },
+        {
+          expand: true, cwd: 'bower_components/angular-bootstrap',
+          src: ['ui-bootstrap.js'], dest: 'assets/lib/angular'
+        },
+        {
+          expand: true, cwd: 'bower_components/angular-bootstrap',
+          src: ['ui-bootstrap-tpls.js'], dest: 'assets/lib/angular'
+        },
+        {
+          expand: true, cwd: 'bower_components/bootstrap/dist',
+          src: ['css/bootstrap.css', 'js/bootstrap.js', 'fonts/**'], dest: 'assets/lib/bootstrap'
         }
         ]
       }
