@@ -12,6 +12,10 @@ var cliqueApp = angular.module('cliqueApp', ['ngRoute', 'ngResource', 'ui.bootst
 			templateUrl: 'partials/weee',
 			controller: 'homeController'
 		})
+		.when('/dashboard', {
+			templateUrl: 'partials/dashboard',
+			controller: 'homeController'
+		})
 		.otherwise({
 			redirectTo: '/home'
 		});
