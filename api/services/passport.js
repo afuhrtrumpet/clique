@@ -40,7 +40,7 @@ passport.use(new FacebookStrategy({
 	  callbackURL: "/user/facebook/callback",
 	  enableProof: false
   }, function (accessToken, refreshToken, profile, done) {
-
+		req.session.fbauthtoken = accessToken;
 		//To make a Facebook API call:
 		/*FB.api('me/likes', {
 			access_token: accessToken
