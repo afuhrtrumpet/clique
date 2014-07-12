@@ -48,14 +48,9 @@ module.exports = {
 								Event.findOne({id: eventId}, function(err, event) {
 									if (err)
 										console.log(err);
-									else if (req.session.user) {
+									else if (req.session.user && !event.userIds.indexOf(req.session.user.id) == -1) {
 										event.userIds.push(req.session.user.id);
-										Event.update({
-											id: eventId,
-											userIds: event.userIds
-										}, function(err, events) {
-											res.redirect('/viewEvent/' + eventId);
-										});
+										res.redirect('/viewEvent/' + eventId);
 									}
 								});
 							} else {

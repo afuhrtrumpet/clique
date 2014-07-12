@@ -44,33 +44,16 @@ module.exports = {
 		var eventId = req.param("id");
 		if (!req.session.user) {
 			req.session.eventId = eventId;
-		res.redirect('/user/facebook', {"id": req.param("id")});
-			/*passport.authenticate('facebook', { scope: ['public_profile',  'read_friendlists', 'email', 'user_about_me', 'user_likes', 'user_friends']},
-					function(err, user) {
-						req.logIn(user, function(err) {
-							if (err) {
-								console.log(err);
-								req.session.flash = 'There was an error';
-								res.redirect('user/login');
-							} else {
-								req.session.user = user;
-								res.redirect('/dashboard');
-							}
-						});
-					})(req, res, next);*/
+			res.redirect('/user/facebook');
 		} else {
 		Event.findOne({id: eventId}, function(err, event) {
+			console.log("Event found");
 			if (err)
 				console.log(err);
-			else if (req.session.user) {
+			else if (req.session.user && !event.userIds.indexOf(req.session.user.id) == -1) {
 				console.log(JSON.stringify(event));
 				event.userIds.push(req.session.user.id);
-				Event.update({
-					id: eventId,
-					userIds: event.userIds
-				}, function(err, events) {
-					res.redirect('/viewEvent/' + eventId);
-				});
+				res.redirect('/viewEvent/' + eventId);
 			}
 		});
 		}

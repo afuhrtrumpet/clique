@@ -4,6 +4,9 @@
 <link type="text/css" href='lib/bootstrap/css/bootstrap.css' rel='stylesheet'/>
 <link type="text/css" href='styles/style2.css' rel='stylesheet'/>
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+<script>
+console.log("<%- user.id %>");
+</script>
 
 <div class="container-fluid main-wrapper-2" ng-controller="dashboardController">
 	<div class="row">
@@ -18,7 +21,7 @@
 				  <li><img class="notification" src="images/Notifications.png" /></li>
 				  <li><img class="settings" src="images/Settings.png" /></li>
 				  <li> 
-				  	<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+				  	<input type="text" class="form-control" ng-model="query" placeholder="Search" name="srch-term" id="srch-term">
 			  	</li>
 				</ul>
 			</div>
