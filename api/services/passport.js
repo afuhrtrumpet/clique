@@ -35,8 +35,8 @@ passport.deserializeUser(function (id, done) {
 });
 
 passport.use(new FacebookStrategy({
-    clientID: "574894572634219",
-    clientSecret: "5ed6ad8e9c13a2495f25079c7e3f369a",
+    clientID: "574894325967577",
+    clientSecret: "fd26d1d075ca0a8f316492a46d2e227c",
 	  callbackURL: "/user/facebook/callback",
 	  enableProof: false
   }, function (accessToken, refreshToken, profile, done) {
