@@ -140,7 +140,7 @@ module.exports = {
 		//return places;
 	},
 
-createSimilarityForPlace : function(req, res) {
+createSimilarity : function(req, res) {
 		// Return a list of suggested places by the recommendation algorithm
 		FB.setAccessToken(req.user.accessToken);
 		var alocation = req.param('location');
@@ -165,8 +165,8 @@ createSimilarityForPlace : function(req, res) {
 				var rating = (point) * ((reviewCount/1000) + 1);
 				var query = "START n = node(*), m = node(*) WHERE HAS(n.tmpnode) AND HAS(n.facebookId) AND HAS(m.yelpId) AND n.facebookId = {facebookId} AND m.yelpId = {yelpID} CREATE UNIQUE (n)-[r:RATED { rating : {Rating} } ]->(m) RETURN r";
 				var params = {
-					facebookId = req.user.facebookId,
-					yelpId = place['yelpId'],
+					facebookId : req.user.facebookId,
+					yelpId : place['yelpId'],
 					Rating : rating
 				};
 				db.query(query, params, function(err, result) { 
@@ -185,7 +185,7 @@ res.send(200);
 generateSuggestions : function(req, res) {
 	var query = "MATCH (b {tmpnode:true} )-[r:RATED]->(m), (b)-[s:SIMILARITY]-(a {tmpnode:true, facebookId: {facebookID} }) WHERE NOT((a)-[:RATED}->(m)) WITH m,s.similarity AS similariy, r.rating AS rating ORDER BY m.yelpName, similarity DESC return m, similarity";
 	var params = {
-		facebookID : req.user.facebookId;
+		facebookID : req.user.facebookId
 	};
 	var data = [];
 	db.query(query, params, function(err, results) { if(err) console.log(err);
