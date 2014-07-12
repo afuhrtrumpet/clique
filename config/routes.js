@@ -35,10 +35,20 @@ module.exports.routes = {
   '/': {
     view: 'home/index'
   },
+<<<<<<< HEAD
   '/test' : {
 		controller : 'NodeController',
 		action : 'createUser'
 	}
+=======
+  '/partials/home': {
+    view: 'partials/home'
+  },
+  '/partials/weee': {
+    view: 'partials/weee'
+  }
+
+>>>>>>> 2f455f763ce64f599ee821f77527f94c89da4d59
   /*
   // But what if you want your home page to display
   // a signup form located at `views/user/signup.ejs`?
