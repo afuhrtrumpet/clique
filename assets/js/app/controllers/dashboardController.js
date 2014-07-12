@@ -48,11 +48,17 @@ var eventCreateFunction = function($scope, $modal, $modalInstance, $http) {
 			event_end_date: event_end_date
 		}
 
+    var msg_body_2 = {
+      location: event_place
+    }
+
 		$http.post('/test/event', msg_body).success(function(res) {
 			console.log(msg_body);
 			//$modalInstance.close();
-			$scope.cancel();
-			$scope.nextEventPage();
+      $http.post('/test/event', msg_body_2).success(function(res) {
+        $scope.cancel();
+        $scope.nextEventPage();
+      });
 		});
 	
 	};
