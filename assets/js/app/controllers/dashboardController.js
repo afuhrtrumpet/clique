@@ -23,7 +23,7 @@ cliqueApp
 		}
 	});
 
-	var eventCreateFunction = function($scope, $modalInstance) {
+	var eventCreateFunction = function($scope, $modalInstance, $http) {
 
 	$scope.submitEvent = function(event_name, event_details, event_place, event_start_date, event_end_date) {
 		var msg_body = {
@@ -35,6 +35,7 @@ cliqueApp
 		}
 
 		$http.post('/test/event', msg_body).success(function(res) {
+			console.log(msg_body);
 			$modalInstance.close();
 		});
 	
