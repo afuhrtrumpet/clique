@@ -77,6 +77,10 @@ module.exports.routes = {
 		controller: 'NodeController',
 		action: 'createEvent'
 },
+'get /test/event' : {
+		controller : 'NodeController',
+		action: 'getEvent'
+},
   /*
   // But what if you want your home page to display
   // a signup form located at `views/user/signup.ejs`?
