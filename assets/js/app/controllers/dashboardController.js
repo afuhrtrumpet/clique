@@ -116,6 +116,7 @@ var eventCreateFunction = function($scope, $modal, $modalInstance, $http) {
 
 var eventCreateNextFunction = function($scope, $modalInstance) {
   $scope.eventDone = function() {
+    console.log('done');
     $modalInstance.close();
   }
 };
