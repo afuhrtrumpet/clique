@@ -276,7 +276,8 @@ getEvent : function(req, res) {
 	var params = { creatorID : req.user.facebookId };
 	var jsonArray = [];
 	db.query(query, params, function (err, results) {
-		for ( var i = 0; i < results.length; ++i) {
+		if (err) console.log(err);
+		else for ( var i = 0; i < results.length; ++i) {
 			var d = results[i].e._data.data;
 			jsonArray.push(d);
 		}
