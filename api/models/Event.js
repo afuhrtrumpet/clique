@@ -10,23 +10,22 @@ module.exports = {
 
   attributes: {
 		creatorId : {
-			type : string,
+			type : 'string',
 			required : true,
-			unique : true
-		},
-
-		eventid : {
-			type: string,
-			required: true,
-			unique: true
+			unique : false 
 		},
 
 		userIds : {
-			type: array,
+			type: 'array',
 			required : false,
 			unique : false
 		},
 			
+		location: {
+			type : 'string',
+			required: true,
+			unique: false
+		},
 
 		 	
   	/* e.g.
