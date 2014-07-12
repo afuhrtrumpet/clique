@@ -50,11 +50,14 @@ passport.use(new FacebookStrategy({
 
     findByFacebookId(profile.id, function (err, user) {
 
+			console.log(JSON.stringify(profile));
+
       // Create a new User if it doesn't exist yet
       if (!user) {
         User.create({
 
-          facebookId: profile.id
+          facebookId: profile.id,
+					name: profile.displayName
 
           // You can also add any other data you are getting back from Facebook here 
           // as long as it is in your model
