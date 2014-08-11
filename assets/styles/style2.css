@@ -48,6 +48,10 @@ img.settings {
 	display: inline;
 }
 
+.profile-pic-top {
+	border-radius: 50%;
+}
+
 /** content **/
 
 .create-event {
@@ -139,6 +143,7 @@ img.settings {
 .block-content .block-pic {
 	height: 68px;
 	width: 68px;
+	border-radius: 50%;
 }
 
 .block-content .block-content-top {
